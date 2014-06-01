@@ -1,18 +1,23 @@
-all:NavSparkDownload
-CC = g++
-INSTDIR = /usr/lib/i386-linux-gnu
-INCLUDE = .
-CFLAGS = -c -g -ansi -lrt -m32
+CXX := g++
+CXXFLAGS := -g
+INCLUDE  := .
+PREFIX   := /usr/local
+PROGRAM  := NavSparkDownload
+
+all: NavSparkDownload
 
 NavSparkDownload: main.o serial.o download.o
-	$(CC) -o NavSparkDownload32 -m32 main.o serial.o download.o
+	$(CXX) -o $(PROGRAM) main.o serial.o download.o
 main.o: main.cpp
-	$(CC) -I$(INCLUDE) $(CFLAGS) -c main.cpp
+	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c main.cpp
 serial.o: serial.cpp serial.h
-	$(CC) -I$(INCLUDE) $(CFLAGS) -c serial.cpp
+	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c serial.cpp
 download.o: download.cpp download.h
-	$(CC) -I$(INCLUDE) $(CFLAGS) -c download.cpp
+	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c download.cpp
+
+install:
+	install -m 0755 $(PROGRAM) $(PREFIX)/bin
 
 clean:
-	rm -f main.o serial.o download.o
+	rm -f *.o
 
