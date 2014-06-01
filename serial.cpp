@@ -14,6 +14,10 @@
 #include "st_type.h"
 #include "serial.h"
 
+#ifndef CMSPAR
+#define CMSPAR 0
+#endif
+
 void Sleep(int ms)
 {
   usleep(ms * 1000);
