@@ -33,7 +33,7 @@ void Flash(int fd)
 
 int Open(const char * port, int idx)
 {
-  int baudIdxTable[] = { B4800, B9600, B19200, B38400, B57600, B115200, B230400, B460800, B921600 };  
+  int baudIdxTable[] = { B4800, B9600, B19200, B38400, B57600, B115200, B230400 };  
   int fd = -1;
 
 

@@ -29,8 +29,8 @@ unsigned GetTickCount()
   return (tv.tv_sec * 1000) + (tv.tv_usec / 1000);
 }
 
-int CSerial::BaudrateTable[] = {4800, 9600, 19200, 38400, 57600, 115200, 230400, 460800, 921600};
-speed_t CSerial::PosixBaudrateTable[] = {B4800, B9600, B19200, B38400, B57600, B115200, B230400, B460800, B921600};
+int CSerial::BaudrateTable[] = {4800, 9600, 19200, 38400, 57600, 115200, 230400};
+speed_t CSerial::PosixBaudrateTable[] = {B4800, B9600, B19200, B38400, B57600, B115200, B230400};
 const int CSerial::BaudrateTableSize = sizeof(CSerial::BaudrateTable) / sizeof(CSerial::BaudrateTable[0]);
 const DWORD defaultSendUnit = 512;
 
