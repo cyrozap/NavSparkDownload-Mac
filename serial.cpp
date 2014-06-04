@@ -80,7 +80,7 @@ bool CSerial::OpenByBaudrate(LPCSTR comPort, speed_t b, int baud)
 */
 	if ((comDeviceHandle = open(comPort, O_RDWR | O_NOCTTY | O_SYNC | O_NDELAY))==-1)	
   	{
-    	printf(" Unable to open %s \r\n", comPort);
+    	printf("Unable to open %s \r\n", comPort);
     	return false;
 	}
   	else

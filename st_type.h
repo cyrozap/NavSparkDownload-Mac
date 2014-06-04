@@ -20,10 +20,10 @@ typedef float                    *PF32;
 typedef double                   *PD64;
 
 //Windows SDK types
-typedef unsigned long 	          DWORD;
+typedef unsigned long             DWORD;
 typedef const char               *LPCSTR;
-typedef unsigned char       BYTE;
-typedef unsigned short      WORD;
+typedef unsigned char             BYTE;
+typedef unsigned short            WORD;
 typedef unsigned int              UINT;
 
 
