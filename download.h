@@ -37,8 +37,8 @@ public:
 protected:
 	BinaryData* fwFile;
 	CmdErrorCode ExcuteBinaryCommand(BinaryCommand* cmd, BinaryData* ackCmd, DWORD timeOut = 2000);
-  CmdErrorCode GetTextAck(std::string& strAckCmd, DWORD timeOut);
-  CmdErrorCode ExcuteTextCommand(LPCSTR strCmd, std::string& strAckCmd, DWORD timeOut);
+	CmdErrorCode GetTextAck(std::string& strAckCmd, DWORD timeOut);
+	CmdErrorCode ExcuteTextCommand(LPCSTR strCmd, std::string& strAckCmd, DWORD timeOut);
 
 	CmdErrorCode SendBinsizeCmd();
 	CmdErrorCode SendFwBuffer();
