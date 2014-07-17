@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include <termios.h>
 #include <string.h> // needed for memset
- #include <sys/time.h>
+#include <sys/time.h>
 unsigned GetTickCount()
 {
   struct timeval tv;
@@ -99,7 +99,7 @@ int main(int argc,char** argv)
   char portName[128] = "/dev/ttyUSB0";
   const unsigned char boostSpeedIdx = 5;
   int tty_fd = -1;
-   if(argc >= 3)
+  if(argc >= 3)
   { //default baud rate 9600 bps
     idx = atoi(argv[2]);
   }
