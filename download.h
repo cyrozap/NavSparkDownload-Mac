@@ -4,7 +4,7 @@
 struct AppParameter
 {
 	enum { ImageSize = 260 };
-	enum { PortSize = 32 };
+	enum { PortSize = 64 };
 
 	char comPort[PortSize];
 	int	baudRateIndex;

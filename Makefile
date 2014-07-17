@@ -1,5 +1,5 @@
-CXX := g++
-CXXFLAGS := -g
+CXX := g++-4.8
+CXXFLAGS := -g -ansi -lrt
 INCLUDE  := .
 PREFIX   := /usr/local
 PROGRAM  := NavSparkDownload

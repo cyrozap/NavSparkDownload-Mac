@@ -33,8 +33,28 @@ unsigned GetTickCount()
   return (tv.tv_sec * 1000) + (tv.tv_usec / 1000);
 }
 
-int CSerial::BaudrateTable[] = {4800, 9600, 19200, 38400, 57600, 115200, 230400};
-speed_t CSerial::PosixBaudrateTable[] = {B4800, B9600, B19200, B38400, B57600, B115200, B230400};
+int CSerial::BaudrateTable[] = {4800, 9600, 19200, 38400, 57600, 115200, 
+#ifdef B230400
+230400, 
+#endif
+#ifdef B460800
+460800, 
+#endif
+#ifdef B921600
+921600
+#endif
+};
+speed_t CSerial::PosixBaudrateTable[] = {B4800, B9600, B19200, B38400, B57600, B115200, 
+#ifdef B230400
+B230400, 
+#endif
+#ifdef B460800
+B460800, 
+#endif
+#ifdef B921600
+B921600
+#endif
+};
 const int CSerial::BaudrateTableSize = sizeof(CSerial::BaudrateTable) / sizeof(CSerial::BaudrateTable[0]);
 const DWORD defaultSendUnit = 512;
 
@@ -114,7 +134,10 @@ bool CSerial::OpenByBaudrate(LPCSTR comPort, speed_t b, int baud)
 
 
         options.c_cflag |= (HUPCL | CLOCAL | CREAD | CS8);// ignore modem controls,
-        options.c_cflag &= ~(CMSPAR|CRTSCTS);;
+#ifdef CMSPAR
+        options.c_cflag &= ~(CMSPAR);;
+#endif
+        options.c_cflag &= ~(CRTSCTS);;
         options.c_cflag &= ~(PARENB | PARODD);      // shut off parity
         //options.c_cflag |= 8;
         options.c_cflag &= ~CSTOPB;

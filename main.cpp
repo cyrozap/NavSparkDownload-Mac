@@ -37,7 +37,15 @@ void ShowNavSparkHelp()
 	printf("  38400 bps\r\n");
 	printf("  57600 bps\r\n");
 	printf("  115200 bps (--speed default)\r\n");
+#ifdef B230400
 	printf("  230400 bps\r\n");
+#endif
+#ifdef B460800
+	printf("  460800 bps\r\n");
+#endif
+#ifdef B921600
+	printf("  921600 bps\r\n");
+#endif
 	printf("\r\n");
 	printf("Example: \r\n");
 	printf("  NavSparkDownloadCmd -p COM3 -i prom.bin -b 9600\r\n");
